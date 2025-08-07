@@ -1,5 +1,12 @@
+const cors = require("cors");
 const app = require("./app");
 require("dotenv").config();
+
+app.use(cors({
+  origin: "http://localhost:3000", // Frontend origin
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 const PORT = 5000;
 
